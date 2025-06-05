@@ -30,8 +30,8 @@ Este proyecto es un sistema web desarrollado en **Laravel** para la empresa Enfr
 - PHP 8.x
 - Laravel 10
 - MySQL
-- Blade, Bootstrap o Tailwind
-
+- Blade
+- Bootstrap
 ---
 
 ## 🧾 Requisitos
@@ -39,7 +39,7 @@ Este proyecto es un sistema web desarrollado en **Laravel** para la empresa Enfr
 - PHP >= 8.1
 - Composer
 - MySQL
-- Laravel (opcionalmente instalado globalmente)
+- Laravel
 
 ---
 
@@ -78,9 +78,12 @@ php artisan serve
 Abrir en el navegador: http://127.0.0.1:8000
 
 🧪 Credenciales de prueba
-Administrador:
+Administrador
 Email: enfriatechsv@gmail.com
-Contraseña: admin123
+Contraseña: enfriatech-admin
+Usuario
+Email: pedritomccormick@gmail.com
+Contraseña: hellmans123
 
 # 🧊 EnfríaTech
-Este proyecto fue desarrollado como parte de la asignatura Desarrollo de Aplicaciones Web de la carrera de Técnico en Ingeniería de Desarrollo de Software.
+Este proyecto fue desarrollado como parte de la asignatura Desarrollo de Aplicaciones Web de la carrera de Técnico en Ingeniería de Desarrollo de Software de la Escuela Especializada en Ingeniería ITCA-FEPADE.
