@@ -47,7 +47,7 @@ Este proyecto es un sistema web desarrollado en **Laravel** para la empresa Enfr
 ## 🚀 Pasos para Ejecutar el Proyecto
 
 ### 1. Clonar el repositorio y entrar en el proyecto
-git clone https://github.com/agescobar/enfriatech-web-project.git
+git clone https://github.com/agescobar/enfriatech-web-project.git  
 cd enfriatech-web-project
 
 ### 2. Instalar dependencias de Laravel
@@ -57,12 +57,12 @@ composer install
 cp .env.example .env
 
 ### 4. Configurar las variables de entorno
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=enfriatech_db
-DB_USERNAME=root
-DB_PASSWORD= *********
+DB_CONNECTION=mysql  
+DB_HOST=127.0.0.1  
+DB_PORT=3306  
+DB_DATABASE=enfriatech_db  
+DB_USERNAME=root  
+DB_PASSWORD= *********  
 
 ### 5. Crear la base de datos en SQLyog
 CREATE DATABASE enfriatech_db;
@@ -74,16 +74,16 @@ php artisan key:generate
 php artisan migrate --seed
 
 ### 8. Levantar el servidor y abrir en el navegador
-php artisan serve
-Abrir en el navegador: http://127.0.0.1:8000
+php artisan serve  
+y abrir en el navegador: http://127.0.0.1:8000
 
-🧪 Credenciales de prueba
-Administrador
-Email: enfriatechsv@gmail.com
-Contraseña: enfriatech-admin
-Usuario
-Email: pedritomccormick@gmail.com
-Contraseña: hellmans123
+## 🧪 Credenciales de prueba
+Administrador  
+Email: enfriatechsv@gmail.com  
+Contraseña: enfriatech-admin  
+Usuario  
+Email: pedritomccormick@gmail.com  
+Contraseña: hellmans123  
 
 # 🧊 EnfríaTech
 Este proyecto fue desarrollado como parte de la asignatura Desarrollo de Aplicaciones Web de la carrera de Técnico en Ingeniería de Desarrollo de Software de la Escuela Especializada en Ingeniería ITCA-FEPADE.
