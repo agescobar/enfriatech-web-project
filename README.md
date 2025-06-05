@@ -1,61 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ❄️ EnfríaTech - Sitio Web Publicitario con sistema de reservas de servicios.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este proyecto es un sistema web desarrollado en **Laravel** para la empresa EnfríaTech. Permite a los clientes realizar cotizaciones automatizadas (aproximadas), calcular capacidad de A/C y reservar servicios.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📁 Estructura General del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Cliente:
+- **Registrarse / Iniciar sesión**: los usuarios pueden crear una cuenta con su nombre, correo y contraseña.
+- **Editar información personal**: pueden actualizar sus datos o cambiar su contraseña.
+- **Reservar citas**: seleccionan un servicio, completan un formulario con dirección, contacto, fecha (con al menos 72h de anticipación) y detalles del equipo.
+- **Historial de reservas**: pueden ver el estado de sus reservas (`enviada`, `pendiente_pago`, `confirmada`, `rechazada`). Al ser aceptadas, se habilita el pago. Reciben confirmación por correo.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Administrador:
+- **Inicio de sesión**: acceso con credenciales predefinidas.
+- **Gestión de servicios**: agregar, editar, eliminar servicios.
+- **Gestión de zonas**: administrar zonas de cobertura.
+- **Gestión de productos y categorías**: CRUD completo.
+- **Gestión de reservas**: aceptar o rechazar, verificar pagos, generar reportes, crear o editar reservas.
 
-## Learning Laravel
+### Funcionalidades sin registro:
+- **Cotizador**: estimación de precio según zona y tipo de servicio.
+- **Cálculo de capacidad**: recomienda capacidad de A/C según dimensiones de la habitación.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### ⚙️ Tecnologías
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- PHP 8.x
+- Laravel 10
+- MySQL
+- Blade, Bootstrap o Tailwind
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🧾 Requisitos
 
-### Premium Partners
+- PHP >= 8.1
+- Composer
+- MySQL
+- Laravel (opcionalmente instalado globalmente)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Pasos para Ejecutar el Proyecto
 
-## Code of Conduct
+### 1. Clonar el repositorio y entrar en el proyecto
+git clone https://github.com/agescobar/enfriatech-web-project.git
+cd enfriatech-web-project
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 2. Instalar dependencias de Laravel
+composer install
 
-## Security Vulnerabilities
+### 3. Crear el archivo de entorno
+cp .env.example .env
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Configurar las variables de entorno
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=enfriatech_db
+DB_USERNAME=root
+DB_PASSWORD= *********
 
-## License
+### 5. Crear la base de datos en SQLyog
+CREATE DATABASE enfriatech_db;
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Generar la clave de aplicación
+php artisan key:generate
+
+### 7. Ejecutar migraciones y seeders
+php artisan migrate --seed
+
+### 8. Levantar el servidor y abrir en el navegador
+php artisan serve
+Abrir en el navegador: http://127.0.0.1:8000
+
+🧪 Credenciales de prueba
+Administrador:
+Email: enfriatechsv@gmail.com
+Contraseña: admin123
+
+# 🧊 EnfríaTech
+Este proyecto fue desarrollado como parte de la asignatura Desarrollo de Aplicaciones Web de la carrera de Técnico en Ingeniería de Desarrollo de Software.

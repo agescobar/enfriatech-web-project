@@ -54,21 +54,11 @@
                         <form method="POST" action="{{ route('registro') }}">
                             @csrf
                             <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre</label>
+                                <label for="nombre" class="form-label">Nombre Completo</label>
                                 <div class="input-group">
                                     <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
                                     <input type="text" class="form-control @error('nombre') is-invalid @enderror" id="nombre" name="nombre" required value="{{ old('nombre') }}">
                                     @error('nombre')
-                                        <div class="invalid-feedback d-block">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="apellido" class="form-label">Apellido</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
-                                    <input type="text" class="form-control @error('apellido') is-invalid @enderror" id="apellido" name="apellido" required value="{{ old('apellido') }}">
-                                    @error('apellido')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
                                 </div>

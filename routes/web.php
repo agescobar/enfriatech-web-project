@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegistroController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,15 +12,28 @@ Route::get('/cotizador', function () {
 });
 
 
-// Para autenticación básica
-Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+// Mostrar formulario de login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
-Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+// Procesar login
+Route::post('/login', [LoginController::class, 'login']);
 
-// Rutas para registro de usuarios
-Route::get('/registro', [App\Http\Controllers\Auth\RegistroController::class, 'showRegistrationForm'])->name('registro');
-Route::post('/registro', [App\Http\Controllers\Auth\RegistroController::class, 'registro']);
+// Logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// Panel para administradores (protegido por middleware auth)
+Route::get('/paneladmin', function () {
+    return view('paneladmin');
+});
+
+// Panel para clientes (protegido por middleware auth)
+Route::get('/panelcliente', function () {
+    return view('panelcliente');
+});
+
+Route::get('/registro', [RegistroController::class, 'showRegistrationForm'])->name('registro');
+
+Route::post('/registro', [RegistroController::class, 'registro'])->name('registro');
 
 Route::get('/servicios', function () {
     return view('servicios');
